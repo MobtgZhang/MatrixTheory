@@ -1,0 +1,40 @@
+\chapter{线性空间与线性变换}
+线性空间是集合空间与$n$维向量空间的推广。线性变换反映了现行空间中元素的一种联系。线性空间和线性变换的概念比较抽象。
+
+几何方法与代数方法的融合是数学自身的需要和数学统一性的体现，也是处理工程问题的有力手段。学习本章时一定要注意思想的来源，并联系所讨论的问题在平面和空间指教坐标系中的原型，将抽象的代数概念几何直观化。
+
+\section{线性空间}
+线性空间是矩阵论最基本的概念之一，是对各种具体线性系统的一种统一的抽象。下面首先介绍基础概念。
+\subsection{集合、数域与映射}
+设给定$n$个集合$A_{1},A_{2},\dots,A_{n}$，由$A_{1},A_{2},\dots,A_{n}$的所有元素组成的集合称为这些集合的\textbf{并集}，记为$A_{1}\cup{A_{2}}\dots\cup{A_{n}}$。
+由$A_{1},A_{2},\dots,A_{n}$的公共元素组成的集合称为这些集合的\textbf{交集}，记为$A_{1}\cap{A_{2}}\dots\cap{A_{n}}$。
+
+设$A,B$是两个集合，由所有属于$A$但不属于$B$的元素组成的集合称为集合$A$与$B$的\textbf{差}，记作$A-B$。
+
+设$A,B$是两个集合，集合$A\times{B}=\left\{\left(a,b\right)\left|a\in{A},b\in{B}\right.\right\}$称为$A$与$B$\textbf{积}。
+
+\begin{definition}
+    设$P$至少包含一个非零数的数集，如果$P$中任意两个数的和、差、积、商（分母不为零）仍属于$P$，称数集$P$为一个数域。
+\end{definition}
+
+显然，全体整数集不构成数域。全体有理数集$\mathbf{Q}$，全体实数集$\mathbf{R}$，全体复数集$\mathbf{C}$都构成数域，其中实数域$\mathbf{R}$和复数域$\mathbf{C}$是工程上较常用的两个数域。
+
+\begin{definition}
+    设$A,B$是两个非空集合，$A$到$B$的一个\textbf{映射} $T$是指一个对应法则，通过该法则，集合$A$中的任一元素$x$，都有集合$B$中唯一确定的元素$y$与之相对应，记作$T:x\rightarrow{y}$或者$T(x)=y$，$y$则称为$x$在映像$T$下的\textbf{像}， $x$称为$y$在映射$T$下的原像。
+    集合$A$的所有元素的像的集合记作$T(A)=\left\{T(x)\left|x\in{A}\right.\right\}$。
+\end{definition}
+
+\begin{definition}
+    设$T$是集合$A$到$B$的一个映射，如果对任意的$x_{1},x_{2}\in{A}$，当$x_{1}\neq{x_{2}}$时，有$T(x_{1})\neq{T(x_{2})}$，称$T$是\textbf{单射}。
+    如果对任意的$y\in{B}$，有$x\in{A}$，使得$T(x)=y$，称$T$是\textbf{满射}。
+    如果$T$既是单射又是满射，称为\textbf{一一对应}，又称为\textbf{双射}。
+\end{definition}
+
+\begin{example}
+    实数域$\mathbf{R}$上的$n\times{n}$阶矩阵全体$\mathbf{R}^{n\times{n}}$，定义
+    \begin{eqnarray}
+        T_{1}\left(\mathbf{A}\right)=\det\left(\mathbf{A}\right),T_{2}\left(\mathbf{A}\right)=a\mathbf{I}_{n},T_{3}\left(\mathbf{A}\right)=\mathbf{A}+\mathbf{I}_{n}\nonumber
+    \end{eqnarray}
+\end{example}
+\section{线性变换}
+\section{应用案例}
