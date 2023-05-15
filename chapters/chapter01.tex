@@ -36,5 +36,69 @@
         T_{1}\left(\mathbf{A}\right)=\det\left(\mathbf{A}\right),T_{2}\left(\mathbf{A}\right)=a\mathbf{I}_{n},T_{3}\left(\mathbf{A}\right)=\mathbf{A}+\mathbf{I}_{n}\nonumber
     \end{eqnarray}
 \end{example}
+其中$\mathbf{A}\in\mathbf{R}^{n\times{n}}$，$a\in\mathbf{R}$是常数，$\det\mathbf{A}$表示矩阵$\mathbf{A}$的行列式，$\mathbf{I}_{n}$是$n$阶单位矩阵，则$T_{1}$是$\mathbf{R}^{n\times{n}}$到$\mathbf{R}$的满射，但不是单射；
+$T_{2}$是$\mathbf{R}^{n\times{n}}$到$\mathbf{R}^{n\times{n}}$的单射，但不是满射；
+$T_{3}$是$\mathbf{R}^{n\times{n}}$到$\mathbf{R}^{n\times{n}}$的双射。
+\subsection{线性空间的定义与性质}
+\begin{definition}
+    设$P$是一个数域，$V$是一个非空集合，定义集合$V\times{V}$到$V$上的加法‘+’及集合$P\times{V}$到$V$上数乘‘.’两种映射，且这两种映射是封闭的，
+    即运算后的结果仍然在$V$中，如果这两种线性运算对任意的$\alpha,\beta.\gamma\in{V}$和$k,l\in{P}$，满足下面8条运算率，那么称集合$V$为数域$P$上的\textbf{线性空间}：
+    \begin{enumerate}[label=(\arabic*)]
+        \item 加法交换律：$\alpha+\beta=\beta+\alpha$；
+        \item 加法结合律：$(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$；
+        \item 零元素存在：即存在任意元素$\alpha$，存在$0$，使得$\alpha+0=\alpha$；
+        \item 负元素存在：即存在任意元素$\alpha$，存在$-\alpha$，使得$\alpha+(-\alpha)=0$；
+        \item 数乘分配率：$k\cdot\left(\alpha+\beta\right)=k\cdot\alpha+k\cdot\beta$；
+        \item 分配率：$(k+l)\cdot\alpha=k\cdot\alpha+l\cdot\beta$；
+        \item 数乘结合律：$\left(kl\right)\cdot\alpha=k\cdot\left(l\cdot\alpha\right)$；
+        \item 单位元存在：存在元素$1$，使得$1\cdot\alpha=\alpha$。
+    \end{enumerate}
+
+    如果$V$是$P$上的线性空间，称$V$中的元素为向量，$P$中的元素为纯两。当$P$为实数域$\mathbf{R}$（复数域$\mathbf{C}$）时，称$V$为\textbf{实（复）线性空间}。
+\end{definition}
+
+\begin{remark}
+    数乘符号‘.’通常省略不写。
+\end{remark}
+
+\begin{example}
+    数域$P$上的全体$n$维向量构成的集合$P^{n}$按通常的加法与数乘，构成线性空间$P^{n}$.
+    特别地，实数域$\mathbf{R}$上的$n$维向量全体，按照向量加法与向量的数乘运算构成线性空间$\mathbf{R}^{n}$，
+    复数域$\mathbf{C}$上的$n$维向量全体，按向量加法与向量的数乘构成线性空间$\mathbf{C}^{n}$。
+\end{example}
+
+\begin{example}
+    实数域$\mathbf{R}$上的$m\times{n}$阶矩阵全体，按矩阵的加法和数乘，构成实数域$\mathbf{R}$上的线性空间$\mathbf{R}^{m\times{n}}$。
+\end{example}
+
+\begin{example}
+    设$\mathbf{R}^{+}$表示全体正实数集合，对任意的$x,y\in\mathbf{R}^{+}$，定义加法$\oplus$与数乘$\circ$分别为：
+    \begin{eqnarray}
+        x\oplus{y}=ab,k\circ{x}=a^{k}\left(a,b\in{\mathbf{R}^{+}},k\in\mathbf{R}\right)\nonumber
+    \end{eqnarray}
+\end{example}
+可验证$\mathbf{R}^{+}$对加法$\oplus$和数乘$\circ$构成实数域上的线性空间。
+
+\begin{example}
+    数域$P$上多项式全体按照多项式的加法，以及数与多项式的乘法构成$P$上的线性空间，记作$P\left[x\right]$。
+\end{example}
+
+\begin{example}
+    数域$P$上次数小于等于$n$的一元多项式再加上零多项式按照多项式的加法，以及数与多项式的乘法构成$P$上的线性空间，记作$P_{n}\left[x\right]$。
+\end{example}
+
+\begin{example}
+    区间$\left[a,b\right]$上全体连续实值函数全体按通常函数的加法和数与函数的乘法构成线性空间，记作$C\left[a,b\right]$。
+\end{example}
+
+\begin{example}
+    其次线性方程组$\mathbf{Ax}=\mathbf{0}$的所有解的集合构成实数域$\mathbf{R}$上的线性空间，称为矩阵$\mathbf{A}$的\textbf{零空间}（或\textbf{核空间}），记作$\text{Ker}\left(\mathbf{A}\right)$。即
+    \begin{eqnarray}
+        \text{Ker}\left(\mathbf{A}\right)&=\left\{\mathbf{x}\in{\mathbf{R}^{n}}\left|\mathbf{Ax}=\mathbf{0},\mathbf{A}\in\mathbf{R}^{m\times{n}}\right.\right\}
+    \end{eqnarray}
+\end{example}
+
+非齐次线性方程组$\mathbf{Ax=b}$的所有解的集合一般不构成实数域$\mathbf{R}$上的线性空间。因为该集合对加法运算不封闭。
+
 \section{线性变换}
 \section{应用案例}

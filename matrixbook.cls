@@ -36,7 +36,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newtheorem{theorem}{\heiti 定理}[section]
 \newtheorem{example}{\heiti 例}[section]
 \newtheorem{corollary}{\heiti 推论}[section]
-\newtheorem{remark}{\heiti 注}[section]
+\newtheorem*{remark}{\heiti 注}
 \newtheorem{exercise}{\heiti 练习}[section]
 \newtheorem{assumption}{\heiti 假设}[section]
 \newtheorem{axiom}{\heiti 公理}[section]
@@ -44,3 +44,10 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newtheorem{conjecture}{\heiti 猜想}[section]
 \renewcommand{\proofname}{\heiti 证明}
 
+\RequirePackage{enumitem}
+
+
+% 定公式、图、表编号为"3-1"的形式，即分隔符由.变为短杠
+\renewcommand\theequation{\arabic{chapter}-\arabic{equation}}
+\renewcommand\thefigure{\arabic{chapter}-\arabic{figure}}
+\renewcommand\thetable{\arabic{chapter}-\arabic{table}}
