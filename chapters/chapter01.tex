@@ -310,9 +310,134 @@ $T_{3}$是$\mathbf{R}^{n\times{n}}$到$\mathbf{R}^{n\times{n}}$的双射。
     \end{eqnarray}
     所以$\left|\mathbf{A}\right|\neq{0}$，即矩阵$\left|\mathbf{A}\right|$是可逆的。(\ref{equation:1-6})式两边右乘$\mathbf{A}^{-1}$，有
     \begin{eqnarray}
-        \left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)\mathbf{A}^{-1}=\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)
+        \left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)\mathbf{A}^{-1}=\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)\nonumber
     \end{eqnarray}
     即基$\beta_{1},\beta_{2},\cdots,\beta_{n}$到基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$的过渡矩阵为$\mathbf{A}^{-1}$。
+\end{proof}
+
+\begin{theorem}
+    设$V^{n}$是数域$P$上的一个线性空间，$\mathbf{A}$是由基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$到基$\beta_{1},\beta_{2},\dots,\beta_{n}$的过渡矩阵，
+    向量$\alpha$关于$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$的坐标为$\mathbf{x}=\left(x_{1},x_{2},\cdots,x_{n}\right)^{T}$，关于基$\beta_{1},\beta_{2},\cdots,\beta_{n}$的坐标为
+    $\mathbf{y}=\left(y_{1},y_{2},\cdots,y_{n}\right)^{T}$，则$\mathbf{x=Ay}$，或者$\mathbf{y=A^{-1}x}$。
+\end{theorem}
+
+\begin{proof}
+    因为
+    \begin{eqnarray}
+        \begin{aligned}
+            \alpha&=y_{1}\beta_{1}+y_{2}\beta_{2}+\cdots+y_{n}\beta_{n}\\
+            &=\left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)\mathbf{y}\\
+            &=\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)\mathbf{y}
+        \end{aligned}\nonumber
+    \end{eqnarray}
+    
+    又因为
+    \begin{eqnarray}
+        \alpha=\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)\mathbf{x}\nonumber
+    \end{eqnarray}
+
+    由$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$是一组基，得
+    \begin{eqnarray}
+        \mathbf{x=Ay}\nonumber
+    \end{eqnarray}
+    证毕。
+\end{proof}
+
+\begin{example}
+    已知$\alpha_{1},\alpha_{2},\alpha_{3}$线性空间$V^{3}$的一组基，向量组$\beta_{1},\beta_{2},\beta_{3}$满足
+    \begin{eqnarray}
+        \beta_{1}+\beta_{3}=\alpha_{1}+\alpha_{2}+\alpha_{3},\beta_{1}+\beta_{3}=\alpha_{2}+\alpha_{3},\beta_{2}+\beta_{3}=\alpha_{1}+\alpha_{3}\nonumber
+    \end{eqnarray}
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item 证明向量组$\beta_{1},\beta_{2},\beta_{3}$也是一组基；
+        \item 求由基$\beta_{1},\beta_{2},\beta_{2}$到基$\alpha_{1},\alpha_{2},\alpha_{3}$的过渡矩阵；
+        \item 求向量$\alpha=\alpha_{1}+2\alpha_{2}-\alpha_{3}$在基$\beta_{1},\beta_{2},\beta_{3}$下的坐标。
+    \end{enumerate}
+\end{example}
+
+\begin{solution}
+    \begin{enumerate}[label=(\arabic*)]
+        \item 由已知条件，有
+        \begin{eqnarray}
+            \left(\beta_{1},\beta_{2},\beta_{3}\right)\left[\begin{array}{ccc}
+                1&1&0\\
+                0&1&1\\
+                1&0&1
+            \end{array}\right]=\left(\alpha_{1},\alpha_{2},\alpha_{3}\right)\left[\begin{array}{ccc}
+                1&0&1\\
+                1&1&0\\
+                1&1&1
+            \end{array}\right]\label{exmaple:1-16}
+        \end{eqnarray}
+        由于上述表达式两边矩阵均可逆，所以$\beta_{1},\beta_{2},\beta_{3}$线性无关，即$\beta_{1},\beta_{2},\beta_{3}$也是一组基。
+        \item 由表达式\ref{exmaple:1-16}，有
+        \begin{eqnarray}
+            \left(\alpha_{1},\alpha_{2},\alpha_{3}\right)=\left(\beta_{1},\beta_{2},\beta_{3}\right)\left[\begin{array}{ccc}
+                1&0&1\\
+                1&1&0\\
+                1&1&1
+            \end{array}\right]\left[\begin{array}{ccc}
+                1&1&0\\
+                0&1&1\\
+                1&0&1
+            \end{array}\right]^{-1}=\left(\beta_{1},\beta_{2},\beta_{3}\right)\left[
+                \begin{array}{ccc}
+                    0&1&0\\
+                    -1&-1&2\\
+                    1&0&0
+                \end{array}
+            \right]\nonumber
+        \end{eqnarray}
+        所以由基$\beta_{1},\beta_{2},\beta_{3}$到基$\alpha_{1},\alpha_{2},\alpha_{3}$的过渡矩阵为$\left[
+            \begin{array}{ccc}
+                0&1&0\\
+                -1&-1&2\\
+                1&0&0
+            \end{array}
+        \right]$。
+        \item 由题意，有
+        \begin{eqnarray}
+            \alpha&=\alpha_{1}+2\alpha_{2}-\alpha_{3}=\left(\alpha_{1},\alpha_{2},\alpha_{3}\right)\left[\begin{array}{c}
+                1\\
+                2\\
+                -1                
+            \end{array}\right]\nonumber\\
+            &=\left(\beta_{1},\beta_{2},\beta_{3}\right)\left[\begin{array}{ccc}
+                0&1&0\\
+                -1&-1&2\\
+                1&0&0
+            \end{array}\right]\left[\begin{array}{ccc}
+                1\\
+                2\\
+                -1
+            \end{array}\right]
+            &=\left(\beta_{1},\beta_{2},\beta_{3}\right)\left[\begin{array}{ccc}
+                2\\
+                -5\\
+                1
+            \end{array}\right]\nonumber
+        \end{eqnarray}
+        所以向量$\alpha=\alpha_{1}+2\alpha_{2}-\alpha_{3}$在基$\beta_{1},\beta_{2},\beta_{3}$下的坐标为$\left(2,-5,1\right)$。
+    \end{enumerate}
+\end{solution}
+\subsection{子空间定义}
+整体有时太庞大，所以通过“部分来获知整体”。对线性空间的研究亦是如此，通过对线性空间的局部进行深入的研究，能够更加深刻地揭示整个线性空间的结构。
+\begin{definition}
+    设$V$是数域$P$上的线性空间，$S$为$V$的一个非空子集，若$S$对$V$已有的加法和乘法运算也构成一个线性空间，称$S$为$V$的一个\textbf{线性子空间}，简称\textbf{子空间}。
+\end{definition}
+
+\begin{theorem}
+    线性空间$V$的一个非空子集$S$构成子空间的充分必要条件为$S$对$V$已有的线性运算封闭。
+\end{theorem}
+
+\begin{proof}
+    必要性显然成立。下面证明充分性。
+
+    已知$S$对加法与数乘运算封闭，则线性空间定义的运算律(1),(2),(5)$\sim$(8)均成立。
+    又$\mathbf{0}\in{S},-\alpha\in{S}$，故运算律(3)(4)成立，即$S$构成线性空间。
+
+    证毕。
 \end{proof}
 
 \section{线性变换}

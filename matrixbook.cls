@@ -43,7 +43,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newtheorem{axiom}{\heiti 公理}[section]
 \newtheorem{property}{\heiti 性质}[section]
 \newtheorem{conjecture}{\heiti 猜想}[section]
-\renewcommand{\proofname}{\heiti 证明}
+\let\proof\relax
+\newtheorem*{proof}{\heiti 证明}
+\let\endproof\relax
 
 \RequirePackage{enumitem}
 
@@ -52,3 +54,16 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \renewcommand\theequation{\arabic{chapter}-\arabic{equation}}
 \renewcommand\thefigure{\arabic{chapter}-\arabic{figure}}
 \renewcommand\thetable{\arabic{chapter}-\arabic{table}}
+
+\RequirePackage{fancyhdr} % 导入fancyhdr包
+
+% 页眉设置
+% 设置摘要的样式
+\fancypagestyle{DocumentStyle}{
+    \fancyhf{} 清空页眉、页脚设置
+    \fancyhead[RO]{\leftmark}% 奇数页右页眉设置为chapter标题
+    \fancyhead[LE]{矩阵论及其应用}% 偶数页左页眉设置为本书标题
+    \fancyfoot[RO,LE]{\thepage}% 页脚设置为页码
+    \renewcommand{\headrulewidth}{1pt}% 设置页眉
+}
+
