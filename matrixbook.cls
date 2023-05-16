@@ -35,6 +35,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newtheorem{lemma}{\heiti 引理}[section]
 \newtheorem{theorem}{\heiti 定理}[section]
 \newtheorem{example}{\heiti 例}[section]
+\newtheorem*{solution}{\heiti 解}
 \newtheorem{corollary}{\heiti 推论}[section]
 \newtheorem*{remark}{\heiti 注}
 \newtheorem{exercise}{\heiti 练习}[section]

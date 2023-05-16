@@ -72,6 +72,7 @@ $T_{3}$是$\mathbf{R}^{n\times{n}}$到$\mathbf{R}^{n\times{n}}$的双射。
 \end{example}
 
 \begin{example}
+    \label{example:1-14}
     设$\mathbf{R}^{+}$表示全体正实数集合，对任意的$x,y\in\mathbf{R}^{+}$，定义加法$\oplus$与数乘$\circ$分别为：
     \begin{eqnarray}
         x\oplus{y}=ab,k\circ{x}=a^{k}\left(a,b\in{\mathbf{R}^{+}},k\in\mathbf{R}\right)\nonumber
@@ -100,5 +101,140 @@ $T_{3}$是$\mathbf{R}^{n\times{n}}$到$\mathbf{R}^{n\times{n}}$的双射。
 
 非齐次线性方程组$\mathbf{Ax=b}$的所有解的集合一般不构成实数域$\mathbf{R}$上的线性空间。因为该集合对加法运算不封闭。
 
+\begin{example}
+    给定矩阵$\mathbf{A}\in{\mathbf{R}^{m\times{n}}}$，集合$\left\{\mathbf{y}\left|\mathbf{y=Ax,x\in{R}}^{n}\right.\right\}$构成实数域$\mathbf{R}$上的线性空间，称为矩阵$\mathbf{A}$的\textbf{值域}，也称为$\mathbf{A}$的\textbf{像}（空间），记作$\mathbf{R(A)}$。
+\end{example}
+
+\begin{example}
+    集合$V_{1}=\left\{\mathbf{x}\left|\mathbf{x}=\left(x_{1},x_{2},0\right)^{T},x_{1},x_{2}\in\mathbf{R}\right.\right\}$是一个线性空间。但集合$V_{2}=$\\
+    $\left\{\mathbf{x}\left|\mathbf{x}=\left(x_{1},x_{2},1\right)^{T},x_{1},x_{2}\in\mathbf{R}\right.\right\}$不是一个线性空间，因为$V_{2}$对加法运算不封闭。
+\end{example}
+
+\begin{remark}
+    \begin{enumerate}[label=(\arabic*)]
+        \item 线性空间不能离开某一数域来定义。实际上，对于不同数域，同一个集合构成的线性空间会不同，甚至一种能成为线性空间而另一种不能成为线性空间。例如$\mathbf{C}$作为$\mathbf{C}$上的线性空间与$\mathbf{C}$作为$\mathbf{R}$上的线性空间是不同的，$\mathbf{R}^{n}$在复数域$\mathbf{C}$上的不构成线性空间。
+        \item 数域$P$中的运算是具体的四则运算，而$V$中所定义的加法运算和数乘运算可以是熟悉一般的运算，也可以是各种特殊的运算，如例\autoref{example:1-14}。
+        \item 唯一性一般较显然，封闭性通常需要证明。
+        \item 线性空间中的元素可以使向量、矩阵、多项式、函数等。
+    \end{enumerate}
+\end{remark}
+
+\subsection{线性空间的基、维数与坐标}
+\begin{definition}
+    设$V$是数域$P$上的线性空间。$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\in{V}$，$\lambda_{1},\lambda_{2},\cdots,\lambda_{n}\in{P}$，则称
+    \begin{eqnarray}
+        \lambda_{1}\alpha_{1}+\lambda_{2}\alpha_{2}+\cdots+\lambda_{n}\alpha_{n}\nonumber
+    \end{eqnarray}
+    为向量组$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$的一个线性组合。如果不存在一组不全为零的常数$\lambda_{1},\lambda_{2},\cdots,\lambda_{n}\in{P}$，使得
+    \begin{eqnarray}
+        \lambda_{1}\alpha_{1}+\lambda_{2}\alpha_{2}+\cdots+\lambda_{n}\alpha_{n}=\mathbf{0}\nonumber        
+    \end{eqnarray}
+    则称向量组$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$\textbf{线性相关}，否则称向量组$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$\textbf{线性无关}。
+\end{definition}
+
+\begin{example}
+    讨论$\mathbf{R}^{2\times{2}}$中，向量组
+    \begin{eqnarray}
+        \alpha_{1}=\left[\begin{array}{cc}
+            -1 & 5\\
+            1& 12
+        \end{array}\right],
+        \alpha_{2}=\left[\begin{array}{cc}
+            5 & 5\\
+            -2& 4
+        \end{array}\right],
+        \alpha_{3}=\left[\begin{array}{cc}
+            4 & -2\\
+            5& -12
+        \end{array}\right],
+        \alpha_{4}=\left[\begin{array}{cc}
+            5 & -3\\
+            2& -8
+        \end{array}\right]\nonumber
+    \end{eqnarray}
+    的线性相关性。
+\end{example}
+
+\begin{solution}
+    设$\lambda_{1},\lambda_{2},\lambda_{3},\lambda_{4}\in{\mathbf{R}}$，使得
+    \begin{eqnarray}
+        \lambda_{1}\alpha_{1}+\lambda_{2}\alpha_{2}+\lambda_{3}\alpha_{3}+\lambda_{4}\alpha_{4}=\mathbf{0}\nonumber
+    \end{eqnarray}
+    即
+    \begin{eqnarray}
+        \lambda_{1}\left[\begin{array}{cc}
+            -1 & 5\\
+            1& 12
+        \end{array}\right]+\lambda_{2}\left[\begin{array}{cc}
+            5 & 5\\
+            -2& 4
+        \end{array}\right]+\lambda_{3}\left[\begin{array}{cc}
+            4 & -2\\
+            5& -12
+        \end{array}\right]+\lambda_{4}\left[\begin{array}{cc}
+            5 & -3\\
+            2& -8
+        \end{array}\right]=\left[\begin{array}{cc}
+            0 & 0\\
+            0 & 0
+        \end{array}\right]\nonumber
+    \end{eqnarray}
+    由矩阵相等的定义，可以得到以下的线性方程组：
+    \begin{eqnarray}
+        \begin{cases}
+            -\lambda_{1}+5\lambda_{2}+4\lambda_{3}+5\lambda_{4}=0\\
+            5\lambda_{1}+5\lambda_{2}-2\lambda_{3}-3\lambda_{4}=0\\
+            \lambda_{1}-2\lambda_{2}+5\lambda_{3}+2\lambda_{4}=0\\
+            12\lambda_{1}+4\lambda_{2}-12\lambda_{3}-8\lambda_{4}=0
+        \end{cases}\label{equation:12}
+    \end{eqnarray}
+
+    由于方程组(\ref{equation:12})的系数行列式为零，所以有非零解，故向量$\alpha_{1},\alpha_{2},\alpha_{3},\alpha_{4}$线性相关。
+\end{solution}
+
+\begin{definition}
+    设线性空间$V$是数域$P$上的线性空间，$V$满足以下条件的向量组$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$称为线性空间$V$的一组\textbf{基}。
+    \begin{enumerate}[label=(\arabic*)]
+        \item $\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$线性无关；
+        \item 线性空间$V$中任意向量都能由$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$线性表示。
+    \end{enumerate}
+    基中的向量个数$n$称为线性空间$V$的维数，记作$\text{dim}(V)=n$。
+\end{definition}
+
+\begin{remark}
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item 基是线性空间$V$的最大线性无关组；$V$的维数是基中所包含元素的个数；
+        \item 基不是唯一的，但不同的基所包含元素个数相等；
+        \item 线性空间不一定是有限维的，如$P[x],C[a,b]$是无限维的，这时基的元素也是无限的。
+    \end{enumerate}
+\end{remark}
+
+\begin{example}
+    对线性空间$P^{n}$，令$e_{i}$为第$i$个分量为$1$，其他分量为零的向量，则$e_{1},e_{2}.\cdots,e_{n}$是线性空间$P^{n}$的一组基（自然基）。
+\end{example}
+
+\begin{example}
+    对线性空间$\mathbf{R}^{m\times{n}}$，令$\mathbf{E}_{i,j}$为这样一个$m\times{n}$阶矩阵，其$(i,j)$元素为$1$,其余元素为零。显然这样的矩阵共有$mn$个，构成了线性空间$\mathbf{R}^{m\times{n}}$的一组基。
+\end{example}
+
+\begin{example}
+    数域$P$上次数小于等于$n$的一元多项式线性空间
+    \begin{eqnarray}
+        P_{n}[x]=\left\{p(x)\left|p(x)=a_{0}+a_{1}x+a_{2}x^{2}+\cdots+a_{n}x^{n}\right.\right\}\nonumber
+    \end{eqnarray}
+    则$1,x,\cdots,x^{n}$是一组基（自然基），$P_{n}[x]$是$n+1$维的。
+\end{example}
+
+\begin{example}
+    对齐次线性方程组$\mathbf{A}_{m\times{n}}\mathbf{x=0}$的零空间$\text{Ker}(\mathbf{A})$，任意一组基础解系即为一组基。
+\end{example}
+
+\begin{theorem}
+    设向量组$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$是线性空间$V^{n}$中的一组基，则$V^{n}$任意向量都可以唯一表示称向量组$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$的线性组合，即$V^{n}$可以表示为
+    \begin{eqnarray}
+        V^{n}=\left\{\alpha\left|\alpha=x_{1}\alpha_{1}+x_{2}\alpha_{2}+\cdots+x_{n}\alpha_{n},x_{1},x_{2},\cdots,x_{n}\in{P}\right.\right\}\nonumber
+    \end{eqnarray}
+\end{theorem}
 \section{线性变换}
 \section{应用案例}
