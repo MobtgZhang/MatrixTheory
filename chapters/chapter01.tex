@@ -236,5 +236,84 @@ $T_{3}$是$\mathbf{R}^{n\times{n}}$到$\mathbf{R}^{n\times{n}}$的双射。
         V^{n}=\left\{\alpha\left|\alpha=x_{1}\alpha_{1}+x_{2}\alpha_{2}+\cdots+x_{n}\alpha_{n},x_{1},x_{2},\cdots,x_{n}\in{P}\right.\right\}\nonumber
     \end{eqnarray}
 \end{theorem}
+
+\begin{definition}
+    设$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$是线性空间$V^{n}$的一组基，对$V^{n}$的任意向量$\alpha$，有
+    \begin{eqnarray}
+        \alpha=x_{1}\alpha_{1}+x_{2}\alpha_{2}+\cdots+x_{n}\alpha_{n}\nonumber
+    \end{eqnarray}
+    则称$\left(x_{1},x_{2},\cdots,x_{n}\right)^{T}$为向量$\alpha$在基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$下的\textbf{坐标}。
+\end{definition}
+
+建立坐标后，线性空间$V^{n}$中的向量$\alpha$与向量$\left(x_{1},x_{2},\cdots,x_{n}\right)$建立了一一对应的关系。
+设$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$是线性空间$V^{n}$的一组基，对任意的$\alpha,\beta\in{V^{n}}$，有
+\begin{eqnarray}
+    \alpha=x_{1}\alpha_{1}+x_{2}\alpha_{2}+\cdots+x_{n}\alpha_{n},\beta=y_{1}\alpha_{1}+y_{2}\alpha_{2}+\cdots+y_{n}\alpha_{n}\nonumber
+\end{eqnarray}
+
+即$\alpha,\beta\in{V^{n}}$在基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$下的坐标分别为$\left(x_{1},x_{2},\cdots,x_{n}\right)^{T}$和$\left(y_{1},y_{2},\cdots,y_{n}\right)^{T}$，则有
+\begin{eqnarray}
+    \begin{aligned}
+        \alpha+\beta&=(x_{1}+y_{1})\alpha_{1}+(x_{2}+y_{2})\alpha_{2}+\cdots+(x_{n}+y_{n})\alpha_{n}\\
+        k\alpha&=kx_{1}\alpha_{1}+kx_{2}\alpha_{2}+\cdots+kx_{n}\alpha_{n}
+    \end{aligned}
+\end{eqnarray}
+
+即$\alpha+\beta$在基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$下的坐标为$\left(x_{1}+y_{1},x_{2}+y_{2},\cdots,x_{n}+y_{n}\right)^{T}$，$k\alpha$在基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$下的坐标为$\left(kx_{1},kx_{2},\cdots,kx_{n}\right)^{T}$。
+
+这种一一对应保持了线性运算的对应关系，可以说线性空间$V^{n}$与$P^{n}$具有相同的结构，称为\textbf{同构}。因为这种同构关系，只需要主要研究元素为向量的线性空间$P^{n}$。
+
+下面研究基改变时坐标变化规律。
+
+设$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$和$\beta_{1},\beta_{2},\cdots,\beta_{n}$是线性空间$V^{n}$的两组基。由于两者都是基，所以两者可以相互线性表示，即
+\begin{eqnarray}
+    \begin{cases}
+        \beta_{1}&=a_{11}\alpha_{1}+a_{21}\alpha_{2}+\cdots+a_{n1}\alpha_{n}\\
+        \beta_{2}&=a_{12}\alpha_{1}+a_{22}\alpha_{2}+\cdots+a_{n2}\alpha_{n}\\
+        &\vdots\\
+        \beta_{1}&=a_{1n}\alpha_{1}+a_{2n}\alpha_{2}+\cdots+a_{nn}\alpha_{n}
+    \end{cases}\label{equation:1-4}
+\end{eqnarray}
+
+设矩阵
+
+\begin{eqnarray}
+    \textbf{A}&=\left[\begin{array}{cccc}
+        a_{11}&a_{12}&\cdots&a_{n1}\\
+        a_{21}&a_{22}&\cdots&a_{n2}\\
+        \vdots&\vdots&\ddots&\vdots\\
+        a_{n1}&a_{n2}&\cdots&a_{nn}
+    \end{array}\right]
+\end{eqnarray}
+
+则式(\ref{equation:1-4})可以简记为
+\begin{eqnarray}
+    \left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)=\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)\mathbf{A}\label{equation:1-6}
+\end{eqnarray}
+
+\begin{theorem}
+    设$\mathbf{A}$是线性空间$V^{n}$由基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$到基$\beta_{1},\beta_{2},\cdots,\beta_{n}$的过渡矩阵，则$\mathbf{A}$是可逆的，且由基$\beta_{1},\beta_{2},\cdots,\beta_{n}$到$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$的过渡矩阵为$\mathbf{A}^{-1}$。
+\end{theorem}
+
+\begin{proof}
+    由已知条件，有
+    \begin{eqnarray}
+        \left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)=\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)\mathbf{A}\nonumber
+    \end{eqnarray}
+    于是
+    \begin{eqnarray}
+        \left|\left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)\right|=\left|\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)\right|\cdot\left|\mathbf{A}\right|\nonumber
+    \end{eqnarray}
+    因为向量组$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$与$\beta_{1},\beta_{2},\cdots,\beta_{n}$均为基，所以有
+    \begin{eqnarray}
+        \left|\left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)\right|\neq{0},\left|\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)\right|\neq{0}\nonumber
+    \end{eqnarray}
+    所以$\left|\mathbf{A}\right|\neq{0}$，即矩阵$\left|\mathbf{A}\right|$是可逆的。(\ref{equation:1-6})式两边右乘$\mathbf{A}^{-1}$，有
+    \begin{eqnarray}
+        \left(\beta_{1},\beta_{2},\cdots,\beta_{n}\right)\mathbf{A}^{-1}=\left(\alpha_{1},\alpha_{2},\cdots,\alpha_{n}\right)
+    \end{eqnarray}
+    即基$\beta_{1},\beta_{2},\cdots,\beta_{n}$到基$\alpha_{1},\alpha_{2},\cdots,\alpha_{n}$的过渡矩阵为$\mathbf{A}^{-1}$。
+\end{proof}
+
 \section{线性变换}
 \section{应用案例}
